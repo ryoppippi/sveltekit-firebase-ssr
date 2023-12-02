@@ -1,14 +1,56 @@
 import type { Cookies, Handle } from '@sveltejs/kit';
-import { decodeToken, refreshAndGetToken } from './utils';
-import type { DecodedIdToken, DecodeTokenError } from '../types';
+import type { DecodedIdToken, DecodeTokenError } from './types';
 
 import { is, ensure, assert } from 'unknownutil';
 import { to } from 'await-to-js';
 
 import { error } from '@sveltejs/kit';
+import { PUBLIC_FIREBASE_API_KEY } from '$env/static/public';
+import { verifyIdToken } from '@marplex/flarebase-auth/build/main/lib/google-oauth';
+import camelcaseKeys from 'camelcase-keys';
+import { withQuery } from 'ufo';
 
 export const TOKEN_COOKIE_NAME = 'token' as const satisfies string;
 export const REFRESH_TOKEN_COOKIE_NAME = 'refreshToken' as const satisfies string;
+
+/**
+ * @description Refresh the token and the refreshToken
+ *
+ * @param refreshToken - refresh token
+ * @returns - new token
+ *
+ */
+export async function refreshAndGetToken(refreshToken: string): Promise<string | undefined> {
+	const res = await fetch(
+		withQuery('https://securetoken.googleapis.com/v1/token', { key: PUBLIC_FIREBASE_API_KEY }),
+		{
+			method: 'post',
+			body: JSON.stringify({
+				grant_type: 'refresh_token',
+				refreshToken
+			})
+		}
+	);
+	if (res.status !== 200) {
+		console.error({ text: await res.text() });
+		throw error(res.status, 'failed to refresh token');
+	}
+
+	const { idToken } = camelcaseKeys(
+		ensure(
+			await res.json(),
+			is.ObjectOf({
+				id_token: is.String
+			})
+		)
+	);
+
+	return idToken;
+}
+
+export async function decodeToken(token: string): Promise<DecodedIdToken> {
+	return (await verifyIdToken(token)) as unknown as DecodedIdToken;
+}
 
 export const cookieOptions = {
 	path: '/',
@@ -55,9 +97,9 @@ export const firebaseHandler = (async ({ event, resolve }) => {
 
 	/** if the token is valid, set it  */
 	if (!err) {
-		event.locals.token = token;
-		event.locals.decodedToken = decodedToken;
+		event.locals.token = ensure(token, is.String);
 		event.locals.refreshToken = refreshToken;
+		event.locals.decodedToken = decodedToken;
 		return resolve(event);
 	}
 
@@ -94,8 +136,8 @@ export const firebaseHandler = (async ({ event, resolve }) => {
 	}
 
 	event.locals.token = ensure(token ?? newToken, is.String);
+	event.locals.refreshToken = ensure(refreshToken, is.String);
 	event.locals.decodedToken = newDecodedToken;
-	event.locals.refreshToken = refreshToken;
 
 	/** set the new token in the cookie */
 	setToken({
