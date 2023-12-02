@@ -8,7 +8,7 @@
 
 	// TODO: wait for eslint-plugin-svelte to support runes
 	// eslint-disable-next-line no-undef
-	const decodedToken = $derived(data.decodedToken);
+	const { decodedToken } = $derived(data);
 </script>
 
 {#if isNullish(decodedToken)}
