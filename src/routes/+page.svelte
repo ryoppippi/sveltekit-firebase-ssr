@@ -2,12 +2,8 @@
 	import { signIn, signOut } from '$lib/firebase/client.svelte';
 	import { isNullish } from 'unknownutil';
 
-	// TODO: wait for eslint-plugin-svelte to support runes
-	// eslint-disable-next-line no-undef
 	const { data } = $props();
 
-	// TODO: wait for eslint-plugin-svelte to support runes
-	// eslint-disable-next-line no-undef
 	const { decodedToken } = data;
 </script>
 
