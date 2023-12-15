@@ -33,7 +33,7 @@ export async function refreshAndGetToken(refreshToken: string): Promise<string |
 	);
 	if (res.status !== 200) {
 		console.error({ text: await res.text() });
-		throw error(res.status, 'failed to refresh token');
+		error(res.status, 'failed to refresh token');
 	}
 
 	const { idToken } = camelcaseKeys(
@@ -106,7 +106,7 @@ export const firebaseHandler = (async ({ event, resolve }) => {
 	/** if the token is invalid and the reason is not that the token is expired, throw an error */
 	if (err.code !== 'ERR_JWT_EXPIRED') {
 		deleteToken({ cookies });
-		throw error(401, err.message);
+		error(401, err.message);
 	}
 
 	/** the below code is executed if the token is expired */
@@ -114,7 +114,7 @@ export const firebaseHandler = (async ({ event, resolve }) => {
 	/** if refreshToken is missing, throw an error */
 	if (!is.String(refreshToken)) {
 		deleteToken({ cookies });
-		throw error(401, 'Invalid token and Refresh token is missing');
+		error(401, 'Invalid token and Refresh token is missing');
 	}
 
 	/** get new token */
@@ -123,7 +123,7 @@ export const firebaseHandler = (async ({ event, resolve }) => {
 	/** if new token is missing, throw an error */
 	if (!is.String(newToken)) {
 		deleteToken({ cookies });
-		throw error(401, 'Invalid token and cannot get new token');
+		error(401, 'Invalid token and cannot get new token');
 	}
 
 	/** decode the new token */
@@ -132,7 +132,7 @@ export const firebaseHandler = (async ({ event, resolve }) => {
 	/** if the new token is invalid, throw an error */
 	if (err1) {
 		deleteToken({ cookies });
-		throw error(401, 'Invalid token and Refresh token is invalid');
+		error(401, 'Invalid token and Refresh token is invalid');
 	}
 
 	event.locals.token = ensure(token ?? newToken, is.String);
