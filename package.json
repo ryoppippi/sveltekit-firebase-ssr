@@ -15,7 +15,7 @@
 		"@marplex/flarebase-auth": "^1.2.0",
 		"@sveltejs/adapter-auto": "^3.2.0",
 		"@sveltejs/kit": "^2.5.5",
-		"@sveltejs/vite-plugin-svelte": "^3.0.1",
+		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"@typescript-eslint/parser": "^7.6.0",
 		"await-to-js": "^3.0.0",
