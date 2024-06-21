@@ -29,7 +29,7 @@
 		"tslib": "^2.6.3",
 		"type-fest": "^4.20.1",
 		"typescript": "^5.4.5",
-		"typescript-svelte-plugin": "^0.3.38",
+		"typescript-svelte-plugin": "^0.3.39",
 		"ufo": "^1.5.3",
 		"unknownutil": "^3.18.1",
 		"vite": "^5.3.1"
