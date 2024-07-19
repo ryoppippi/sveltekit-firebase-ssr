@@ -30,7 +30,7 @@
 		"type-fest": "^4.21.0",
 		"typescript": "^5.5.3",
 		"typescript-svelte-plugin": "^0.3.39",
-		"ufo": "^1.5.3",
+		"ufo": "^1.5.4",
 		"unknownutil": "^3.18.1",
 		"vite": "^5.3.4"
 	},
