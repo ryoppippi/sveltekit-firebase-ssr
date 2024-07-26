@@ -28,7 +28,7 @@
 		"svelte-check": "^3.8.4",
 		"tslib": "^2.6.3",
 		"type-fest": "^4.22.1",
-		"typescript": "^5.5.3",
+		"typescript": "^5.5.4",
 		"typescript-svelte-plugin": "^0.3.39",
 		"ufo": "^1.5.4",
 		"unknownutil": "^3.18.1",
