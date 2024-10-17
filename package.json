@@ -32,7 +32,7 @@
 		"typescript-svelte-plugin": "^0.3.42",
 		"ufo": "^1.5.4",
 		"unknownutil": "^3.18.1",
-		"vite": "^5.4.8"
+		"vite": "^5.4.9"
 	},
 	"type": "module"
 }
