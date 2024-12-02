@@ -24,7 +24,7 @@
 		"firebase-admin": "^13.0.1",
 		"prettier": "^3.4.1",
 		"prettier-plugin-svelte": "^3.3.2",
-		"svelte": "^5.2.10",
+		"svelte": "^5.2.11",
 		"svelte-check": "^4.1.0",
 		"tslib": "^2.8.1",
 		"type-fest": "^4.29.0",
