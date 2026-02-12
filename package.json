@@ -13,7 +13,7 @@
 	},
 	"devDependencies": {
 		"@marplex/flarebase-auth": "^1.2.0",
-		"@sveltejs/adapter-auto": "^6.1.0",
+		"@sveltejs/adapter-auto": "^6.1.1",
 		"@sveltejs/kit": "^2.20.8",
 		"@sveltejs/vite-plugin-svelte": "^6.1.3",
 		"@total-typescript/ts-reset": "^0.6.1",
