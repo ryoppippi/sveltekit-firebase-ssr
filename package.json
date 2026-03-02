@@ -21,7 +21,7 @@
 		"await-to-js": "^3.0.0",
 		"camelcase-keys": "^10.0.2",
 		"firebase": "^12.9.0",
-		"firebase-admin": "^13.6.1",
+		"firebase-admin": "^13.7.0",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.0",
 		"svelte": "^5.53.5",
