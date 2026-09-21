@@ -22,7 +22,7 @@
 		"camelcase-keys": "^10.0.2",
 		"firebase": "^12.19.0",
 		"firebase-admin": "^14.4.0",
-		"prettier": "^3.9.7",
+		"prettier": "^3.9.8",
 		"prettier-plugin-svelte": "^4.1.1",
 		"svelte": "^5.57.0",
 		"svelte-check": "^4.7.6",
