@@ -19,7 +19,7 @@
 		"@total-typescript/ts-reset": "^0.6.1",
 		"@typescript-eslint/parser": "^8.70.0",
 		"await-to-js": "^3.0.0",
-		"camelcase-keys": "^10.0.2",
+		"camelcase-keys": "^10.0.3",
 		"firebase": "^12.19.0",
 		"firebase-admin": "^14.4.0",
 		"prettier": "^3.9.8",
