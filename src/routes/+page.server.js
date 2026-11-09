@@ -1,4 +1,4 @@
-import { dev } from '$app/environment';
+import { dev } from '$app/env';
 
 export const load = async ({ parent, locals }) => {
 	if (dev) console.log({ locals });

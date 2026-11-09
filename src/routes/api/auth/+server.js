@@ -1,4 +1,4 @@
-import { deleteToken, setToken } from '$lib/firebase/server';
+import { deleteToken, setToken } from '#lib/firebase/server.ts';
 import { json } from '@sveltejs/kit';
 import { ensure, is } from 'unknownutil';
 

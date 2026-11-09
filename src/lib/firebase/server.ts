@@ -1,11 +1,12 @@
-import type { Cookies, Handle } from '@sveltejs/kit';
+import type { Cookies } from '@sveltejs/kit';
+import type { Handle } from '@sveltejs/kit/hooks';
 import type { DecodedIdToken, DecodeTokenError } from './types';
 
 import { is, ensure, assert } from 'unknownutil';
 import { to } from 'await-to-js';
 
 import { error } from '@sveltejs/kit';
-import { PUBLIC_FIREBASE_API_KEY } from '$env/static/public';
+import { PUBLIC_FIREBASE_API_KEY } from '$app/env/public';
 import { verifyIdToken } from '@marplex/flarebase-auth/build/main/lib/google-oauth';
 import camelcaseKeys from 'camelcase-keys';
 import { withQuery } from 'ufo';

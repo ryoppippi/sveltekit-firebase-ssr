@@ -1,5 +1,5 @@
-import { browser } from '$app/environment';
-import { getToken } from '$lib/firebase/client.svelte';
+import { browser } from '$app/env';
+import { getToken } from '#lib/firebase/client.svelte.ts';
 
 export const load = async ({ data }) => {
 	const { token: tokenFromCookie } = data;

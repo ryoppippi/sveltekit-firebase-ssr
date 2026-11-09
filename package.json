@@ -13,8 +13,8 @@
 	},
 	"devDependencies": {
 		"@marplex/flarebase-auth": "^1.2.0",
-		"@sveltejs/adapter-auto": "^8.0.0",
-		"@sveltejs/kit": "^2.70.4",
+		"@sveltejs/adapter-vercel": "^7.0.2",
+		"@sveltejs/kit": "^3.1.1",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
 		"@total-typescript/ts-reset": "^0.6.1",
 		"@typescript-eslint/parser": "^8.72.1",
@@ -28,11 +28,14 @@
 		"svelte-check": "^4.7.8",
 		"tslib": "^2.9.1",
 		"type-fest": "^5.10.0",
-		"typescript": "^7.0.2",
+		"typescript": "^6.0.3",
 		"typescript-svelte-plugin": "^0.3.52",
 		"ufo": "^1.6.4",
 		"unknownutil": "^3.18.1",
 		"vite": "^8.3.6"
+	},
+	"imports": {
+		"#lib/*": "./src/lib/*"
 	},
 	"type": "module"
 }

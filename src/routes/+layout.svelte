@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { PUBLIC_FIREBASE_API_KEY, PUBLIC_FIREBASE_PROJECT_ID } from '$env/static/public';
-	import { init, Loading, type FirebaseOptions } from '$lib/firebase/client.svelte';
+	import { PUBLIC_FIREBASE_API_KEY, PUBLIC_FIREBASE_PROJECT_ID } from '$app/env/public';
+	import { init, Loading, type FirebaseOptions } from '#lib/firebase/client.svelte.ts';
 
 	const { children, data } = $props();
 

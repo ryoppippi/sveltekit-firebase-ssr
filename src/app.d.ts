@@ -1,5 +1,5 @@
 import '@total-typescript/ts-reset';
-import type { DecodedIdToken } from '$lib/firebase/types';
+import type { DecodedIdToken } from '#lib/firebase/types.ts';
 
 declare global {
 	namespace App {
