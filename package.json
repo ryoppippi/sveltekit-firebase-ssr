@@ -28,11 +28,14 @@
 		"svelte-check": "^4.7.8",
 		"tslib": "^2.9.1",
 		"type-fest": "^5.10.0",
-		"typescript": "^7.0.2",
+		"typescript": "^6.0.3",
 		"typescript-svelte-plugin": "^0.3.52",
 		"ufo": "^1.6.4",
 		"unknownutil": "^3.18.1",
 		"vite": "^8.3.6"
+	},
+	"imports": {
+		"#lib/*": "./src/lib/*"
 	},
 	"type": "module"
 }

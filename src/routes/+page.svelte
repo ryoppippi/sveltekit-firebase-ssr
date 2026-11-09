@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { signIn, signOut } from '$lib/firebase/client.svelte';
+	import { signIn, signOut } from '#lib/firebase/client.svelte.ts';
 	import { isNullish } from 'unknownutil';
 
 	const { data } = $props();
