@@ -20,7 +20,7 @@
 		"@typescript-eslint/parser": "^8.73.0",
 		"await-to-js": "^3.0.0",
 		"camelcase-keys": "^10.0.3",
-		"firebase": "^13.3.0",
+		"firebase": "^13.4.0",
 		"firebase-admin": "^14.5.1",
 		"prettier": "^3.10.1",
 		"prettier-plugin-svelte": "^4.1.1",
